@@ -1,3 +1,2 @@
 # john-paul-vistal.github.io
-My personal website
-This is my personal website about my personal success
+This is my personal website about my success and life journey
