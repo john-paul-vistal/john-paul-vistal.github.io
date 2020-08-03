@@ -1,270 +1,469 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Computer Arts</title>
-  <link rel="icon" href="./src/img/icon.png">
-  <link rel="stylesheet" href="src/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JP Vistal</title>
+    <link rel="icon" href="src/img/logo.png">
+    <!-- BOOOTSTRAP -->
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <script src="src/js/jquery.js"></script>
+    <script src="src/js/cdn-jsdelivr.js"></script>
+    <script src="src/js/stack-patch.js"></script>
+    <!-- FONT AWESOME, AOS and  W3 css  -->
+    <link rel="stylesheet" href="src/css/w3-css.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- OWN STYLE AND SCRIPT -->
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/script.js"></script>
+
 </head>
 
 <body>
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
-    <img src="src/img/logo.png" alt="LOGO" class="logo mr-4">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Navbar (sit on top) -->
+    <nav id="navigation" class="navbar navbar-expand-lg navbar-light bg-transparet fixed-top">
+        <a class="navbar-brand text-white ml-1 underline px-4" href="#">JP VISTAL</a>
+        <div id="menu-collapsed" class="navbar-toggler menucontainer" onclick="change_form(this)" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="justify-content-lg-end collapse navbar-collapse mr-3" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item px-3 underline">
+                    <a class="nav-link nav-item text-white" href="#about">About</a>
+                </li>
+                <li class="nav-item px-3 underline">
+                    <a class="nav-link nav-item text-white" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item px-3 underline">
+                    <a class="nav-link nav-item text-white " href="#activity">Activity</a>
+                </li>
+                <li class="nav-item px-3 underline">
+                    <a class="nav-link nav-item text-white" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active mx-3">
-          <a class="nav-link " href="#">Home</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link"   href="src/html/images.html" >Pictures</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link" onclick="notavailable()">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            More
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" onclick="notavailable()">Info</a>
-            <a class="dropdown-item" onclick="notavailable()">Contact Us</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" onclick="notavailable()">Coming Soon...</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
 
-  <div class="progress-container fixed-bottom">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" id="myBar"></div>
-  </div>
+    <!-- Header with full-height image -->
+    <header class="bgimg-1 w3-display-container" id="home">
+        <div class="w3-display-middle w3-text-white text-center">
+            <span style="font-size:90px;font-style: oblique;font-family: serif" class="w3-hide-small w3-hide-medium w3-animate-opacity"><b>Be Your Self</b></span>
+            <span style="font-size:45px;font-style: oblique;font-family: serif" class="w3-hide-large w3-animate-opacity"><b>Be Your Self</b></span>
+            <br>
+            <p class="w3-animate-opacity" style="font-size:20px;margin-top:-20px">Think of the best and become the best version of your self</p>
+            <a href="#hobies"><button class="rounded btn  w3-white w3-padding-large w3-large w3-margin-top w3-hover-blue">Discover Something About Me</button></a>
+        </div>
+    </header>
 
-  <div class="parallax1">
-  </div>
-
-  <div style="height:620px;color:black;background: rgba(238, 227, 212, 0.822)">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 display">
-          <img src="src/img/capt.png" alt="Image" class="bodyimage">
-          <div class="talk-bubble tri-right left-top bubble" id="display">
-            <div class="talktext text-center">
-              <p>𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝔾ℝ𝔸ℙℍ𝕀ℂ𝕊 𝔸ℝ𝕋</p>
+    <!-- Hobies Section -->
+    <div class="w3-container" style="padding:90px 16px" id="hobies">
+        <h3 class="w3-center">WHAT I LIKE THE MOST</h3>
+        <p class="w3-center w3-large">Things that I do and I enjoy in my life</p>
+        <div class="w3-row-padding w3-center" style="margin-top:64px">
+            <div data-aos="fade-up" class="w3-quarter">
+                <i class="fa fa-desktop w3-margin-bottom w3-xxxlarge w3-center"></i>
+                <p class="w3-large underline">Studying IT</p>
+                <p>I found my self so pasionate about computer technology thats why I like to study more about IT.</p>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-7 shadow my-2 bg-light p-0 textholder " style="background: linear-gradient(to right, #20da4f, #00c4f5);">
-          <h2 class="mt-4 ml-4">𝔾ℝ𝔸ℙℍ𝕀ℂ 𝔸ℝ𝕋</h2>
-          <P class="ml-4">Graphic designers combine art and technology to communicate ideas through images and the
-            layout of websites and printed pages. They may use a variety of design elements to achieve artistic or
-            decorative effects.</P>
-
-          <p class="ml-4">Graphic designers work with both text and images. They often select the type, font, size,
-            color, and line
-            length of headlines, headings, and text. Graphic designers also decide how images and text will go together
-            on a print or webpage, including how much space each will have. When using text in layouts, graphic
-            designers collaborate closely with writers who choose the words and decide whether the words will be put
-            into paragraphs, lists, or tables. Through the use of images, text, and color, graphic designers can
-            transform statistical data into visual graphics and diagrams, which can make complex ideas more accessible.</p>
-
-          <p class="ml-4">Graphic design is important in the sales and marketing of products, and is a critical
-            component of
-            brochures and logos. Therefore, graphic designers, also referred to as graphic artists or communication
-            designers, often work closely with people in advertising and promotions, public relations, and marketing.</p>
-
-          <p class="ml-4">Frequently, designers specialize in a particular category or type of client. For example,
-            some create the
-            graphics used in packaging for various types of retail products, while others may work on the visual design
-            used on a book jacket.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="parallax2 text-center">
-  </div>
-
-  <div style="height:620px;color:black;background: rgba(238, 227, 212, 0.822)">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-7 shadow my-2 bg-light p-0 text-white" style="background: linear-gradient(to right, #365fe6, #7229d1);">
-          <h2 class="mt-4 ml-4">ℂ𝕠𝕞𝕡𝕦𝕥𝕖𝕣-𝔾𝕖𝕟𝕖𝕣𝕒𝕥𝕖𝕕 𝕀𝕞𝕒𝕘𝕖𝕣𝕪</h2>
-          <P class="ml-4">Computer-Generated Imagery (CGI) is the application of computer graphics to create or
-            contribute to images in art, printed media, video games, films, television programs, shorts, commercials,
-            videos, and simulators.</P>
-
-          <p class="ml-4">CGI is used for visual effects because the quality is often higher and effects are more
-            controllable than other more physically based processes, such as constructing miniatures for effects shots
-            or hiring extras for crowd scenes, and because it allows the creation of images that would not be feasible
-            using any other technology.</p>
-
-          <p class="ml-4">Computer Generated Imagery helps in visualizing technical concepts that would be difficult to
-            illustrate in any other way.
-            This gives clients the opportunity to visualize living in that particular home. It is also a useful way to
-            create very high quality photo-realistic illustration.
-            Architectural visualizations give a professional, sharp and artistic edge to any real estate commercial
-            presentation.
-            Then, it is inexpensive and allows a single artist to produce content without the hiring of extras for
-            crowd scenes, expensive set pieces or props.
-            Computer Generated Imagery’s visual effects are more controllable than other more physically
-            based processes such as constructing miniatures for effect shots because it allows the creation of images
-            that would not be feasible using any other technology.
-            <br><br>
-            Lastly, unlike hand-drawn animations, Computer Generated Imagery is time efficient and believable.</p>
-
-        </div>
-        <div class="col-sm-5 display">
-          <img src="src/img/black.png" alt="Image" class="bodyimage1">
-          <div class="talk-bubble tri-right left-top bubble1" id="display">
-            <div class="talktext text-center">
-              <p>𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝔾ℝ𝔸ℙℍ𝕀ℂ𝕊 𝔸ℝ𝕋</p>
+            <div data-aos="fade-up" class="w3-quarter">
+                <i class="fa fa-image w3-margin-bottom w3-xxxlarge"></i>
+                <p class="w3-large underline">Digital Arts</p>
+                <p>I see digital arts as an interisting thing. Doing arts using digital technology is really fun to do.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="parallax3 text-center">
-  </div>
-
-  <div style="height:620px;color:black;background: rgba(238, 227, 212, 0.822)">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-7 shadow my-2 bg-light p-0" style="background: linear-gradient(to right, #97c4db, #00c4f5);">
-          <h2 class="mt-4 ml-4">ℂ𝕠𝕞𝕡𝕦𝕥𝕖𝕣 𝔸𝕟𝕚𝕞𝕒𝕥𝕚𝕠𝕟</h2>
-          <P class="ml-4">Computer animation is the art of creating moving images via the use of computers.
-
-            It is a subfield of computer graphics and animation.
-
-            Increasingly it is created by means of 3D computer graphics, though 2D computer graphics are still widely
-            used for low bandwidth and faster real-time rendering needs.
-
-            Sometimes the target of the animation is the computer itself, but it sometimes the target is another
-            medium, such as film.
-
-            It is also referred to as CGI (Computer-generated imagery or computer-generated imaging), especially when
-            used in films.</P>
-
-          <p class="ml-4">To create the illusion of movement, an image is displayed on the computer screen then quickly
-            replaced by a new image that is similar to the previous image, but shifted slightly.
-
-            This technique is identical to how the illusion of movement is achieved with television and motion
-            pictures.
-
-            Computer animation is essentially a digital successor to the art of stop motion animation of 3D models and
-            frame-by-frame animation of 2D illustrations.
-
-            For 3D animations, objects (models) are built on the computer monitor (modeled) and 3D figures are rigged
-            with a virtual skeleton.
-
-            For 2D figure animations, separate objects (illustrations) and separate transparent layers are used, with
-            or without a virtual skeleton.</p>
-        </div>
-        <div class="col-sm-5 display">
-          <img src="src/img/man2.png" alt="Image" class="bodyimage2">
-          <div class="talk-bubble tri-right left-top bubble1" id="display">
-            <div class="talktext text-center">
-              <p>𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝔾ℝ𝔸ℙℍ𝕀ℂ𝕊 𝔸ℝ𝕋</p>
+            <div data-aos="fade-up" class="w3-quarter">
+                <i class="fas fa-hiking w3-margin-bottom w3-xxxlarge"></i>
+                <p class="w3-large underline">Adventure</p>
+                <p>I can say that I am naturaly born adventurer. Forest hiking is one of my favorite adventure to do.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="parallax4 text-center">
-  </div>
-
-  <div style="height:620px;color:black;background: rgba(238, 227, 212, 0.822)">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 display">
-          <img src="src/img/iron.png" alt="Image" class="bodyimage3">
-          <div class="talk-bubble tri-right left-top bubble2" id="display">
-            <div class="talktext text-center">
-              <p>𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝔾ℝ𝔸ℙℍ𝕀ℂ𝕊 𝔸ℝ𝕋</p>
+            <div data-aos="fade-up" class="w3-quarter">
+                <i class="fa fa-play w3-margin-bottom w3-xxxlarge"></i>
+                <p class="w3-large underline">Movie</p>
+                <p>One of my hobies is movie marathon. I am a big fan of MARVEL movies. And my favorite genre is Sci-Fi and Adventure</p>
             </div>
-          </div>
+            <div data-aos="fade-up" class="w3-third">
+                <i class="fa fa-music w3-margin-bottom w3-xxxlarge"></i>
+                <p class="w3-large underline">Music</p>
+                <p>Music is one of my stress reliever and music makes my ideas to genrate. I like working with music.</p>
+            </div>
+            <div data-aos="fade-up" class="w3-third">
+                <i class="fa fa-hammer w3-margin-bottom w3-xxxlarge"></i>
+                <p class="w3-large underline">Crafting</p>
+                <p>I also found my self as a craft's man I really like to make something. And carpentry is is one of my hobies</p>
+            </div>
+            <div data-aos="fade-up" class="w3-third">
+                <i class="fa fa-guitar w3-margin-bottom w3-xxxlarge"></i>
+                <p class="w3-large underline">Guitar</p>
+                <p>I play guitar for relaxation and everytime I am sad. I also play it for fun I like to play regea songs</p>
+            </div>
         </div>
-        <div class="col-sm-7 shadow my-2 bg-light p-0 text-white" style="background: linear-gradient(to right, #f13c3c, #f5f826);">
-          <h2 class="mt-4 ml-4">𝔻𝕚𝕘𝕚𝕥𝕒𝕝 ℙ𝕣𝕚𝕟𝕥𝕚𝕟𝕘</h2>
-          <P class="ml-4">Digital printing means to methods of printing from a digital-based image directly to a
-            variety of media. It usually refers to professional printing where small-run jobs from desktop publishing
-            and other digital sources are printed using large-format and/or high-volume laser or inkjet printers.</P>
-
-          <p class="ml-4">The 3D printing technology made its way to the technological world in the year 1986, but not
-            gain importance until 1990. It was not that popular outside the world of engineering, architecture and
-            manufacturing.
-
-            3D printing is also known as desktop fabrication, it can form any material that can be obtained as a
-            powder. For creating an object you need a digital 3D-model. You can scan a set of 3D images, or draw it
-            using computer-assisted design or CAD software. You can also download them from internet. The digital
-            3D-model is usually saved in STL format and then sent to the printer. The process of "printing" a
-            three-dimensional object layer-by-layer with equipment, which is quite similar with ink-jet printers.</p>
-
-          <p class="ml-4">A laser printer is a popular type of personal computer printer that uses a non-impact (keys
-            don't strike
-            the paper), photocopier technology. When a document is sent to the printer, a laser beam "draws" the
-            document on a selenium-coated drum using electrical charges. After the drum is charged, it is rolled in
-            toner, a dry powder type of ink.</p>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <footer style="background: linear-gradient(to top, #5bc6e7, #5402c0);height: 150px;">
-    <img src="src/img/logo.png" alt="LOGO" class="logo mr-4">
-    <a href="#" class="mt-3 fa fa-facebook"></a>
-    <a href="#" class="mt-3 fa fa-twitter"></a>
-    <a href="#" class="fa fa-google"></a>
-    <a href="#" class="fa fa-linkedin"></a>
-    <a href="#" class="fa fa-youtube"></a>
-    <a href="#" class="fa fa-instagram"></a>
-  </footer>
+    <!-- About Section-->
+    <div id="about" class="w3-container w3-light-grey" style="padding:100px 16px">
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                <h3>Hi! I'm John Paul Vistal</h3>
+                <p>
+                    Since technology brings a lot of changes in our society I grab the opportunity to use it as a documentation of my success. At the same time, I am also studying in this field. And that's why this website is created. This is also served as an application
+                    of all that I learn in Web Development.
+                </p>
+                <p>
+                    Some of the content of this website is my projects and activities that you can use as a guide if you want to learn IT. And I also provide my contact information if you want some guidance. And I am willing to help you as long as I know that field.
+                </p>
+                <p>
+                    This website is also meant to inspire other students to do what they want. And to follow the path that they desire. Be yourself and reach what you want to do in your life. Let your self make the path that you want to take. No matter how hard it is, continue
+                    to do so and you will reach your goal.
+                </p>
+                <p class="text-right">
+                    <i>"Life is a journey to take don't be afraid to take the risk"</i>
+                </p>
+
+                <p><a href="#activity" class="w3-button w3-black"><i class="fa fa-th"> </i> View My Works</a></p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000" class="w3-col m6">
+                <img class="w3-image w3-round-large animate-zoom" src="src/img//my-pic-profile.png" alt="Buildings" width="700" height="394">
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="w3-container" style="padding:80px 16px;padding-bottom: 10px;" id="gallery">
+        <h3 class="w3-center">LIFE JOURNEY</h3>
+        <p class="w3-center w3-large">My life journey documentation</p>
+        <div class="w3-row-padding" style="margin-top:55px">
+            <div class="w3-col l4 m6 w3-margin-bottom ">
+                <div data-aos="fade-down-left" data-aos-duration="500" class="card shadow" style="width: 100%;">
+                    <div class="container-card p-3 animate-zoom">
+                        <img src="src/img/Copy of IMG_0343.JPG" alt="Avatar" class="image-card rounded" style="width:100%">
+                        <div class="middle">
+                            <div class="text">VIEW</div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 w3-margin-bottom ">
+                <div data-aos="fade-down-left" data-aos-duration="1000" class="card shadow" style="width: 100%;">
+                    <div class="container-card p-3 animate-zoom">
+                        <img src="src/img/Copy of IMG_0343.JPG" alt="Avatar" class="image-card rounded" style="width:100%">
+                        <div class="middle">
+                            <div class="text">VIEW</div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4 m15 w3-margin-bottom ">
+                <div data-aos="fade-down-left" data-aos-duration="1500" class="card shadow " style="width: 100%; ">
+                    <div class="container-card p-3 animate-zoom ">
+                        <img src="src/img/Copy of IMG_0343.JPG " alt="Avatar " class="image-card rounded " style="width:100% ">
+                        <div class="middle ">
+                            <div class="text">VIEW</div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center ">
+                        <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row-padding " style="margin-top:20px ">
+            <div class="w3-col l4 m6 w3-margin-bottom pb-5">
+                <div data-aos="fade-down-left" data-aos-duration="500" class="card shadow " style="width: 100%; ">
+                    <div class="container-card p-3 animate-zoom ">
+                        <img src="src/img/Copy of IMG_0343.JPG " alt="Avatar " class="image-card rounded " style="width:100% ">
+                        <div class="middle ">
+                            <div class="text">VIEW</div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center ">
+                        <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4 m6 w3-margin-bottom ">
+                <div data-aos="fade-down-left" data-aos-duration="1000" class="card shadow " style="width: 100%; ">
+                    <div class="container-card p-3 animate-zoom ">
+                        <img src="src/img/Copy of IMG_0343.JPG " alt="Avatar " class="image-card rounded " style="width:100% ">
+                        <div class="middle ">
+                            <div class="text">VIEW</div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center ">
+                        <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col l4 m15 w3-margin-bottom ">
+                <div data-aos="fade-down-left" data-aos-duration="1500" class="card shadow " style="width: 100%; ">
+                    <div class="container-card p-3 animate-zoom ">
+                        <img src="src/img/Copy of IMG_0343.JPG " alt="Avatar " class="image-card rounded " style="width:100% ">
+                        <div class="middle ">
+                            <div class="text">VIEW</div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center ">
+                        <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work Section -->
+    <div class="bgimg-2 w3-container " style="padding:90px 16px " id="activity">
+        <h3 class="w3-center text-white ">MY WORK</h3>
+        <p class="w3-center w3-large text-white ">What I've done for my self and to others</p>
+
+        <div class="w3-row-padding" style="margin-top:64px ">
+            <div class="w3-col l3 m6">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="A microphone ">
+            </div>
+            <div class="w3-col l3 m6">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="A phone ">
+            </div>
+            <div class="w3-col l3 m6 ">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="A drone ">
+            </div>
+            <div class="w3-col l3 m6 ">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="Soundbox ">
+            </div>
+        </div>
+
+        <div class="w3-row-padding mt-4">
+            <div class="w3-col l3 m6 ">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="A tablet ">
+            </div>
+            <div class="w3-col l3 m6 ">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="A camera ">
+            </div>
+            <div class="w3-col l3 m6 ">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="A typewriter ">
+            </div>
+            <div class="w3-col l3 m6 ">
+                <img data-aos="fade-up" src="src/img/IMG20200119073045.jpg " style="width:100% " class="hoverImages rounded" alt="A tableturner ">
+            </div>
+        </div>
+        <!-- Promo Section "Statistics " -->
+        <div class="container-fluid w3-center mt-5 mb-0 ">
+            <div class="w3-quarter text-white underline ">
+                <span class="w3-xxlarge ">5+</span>
+                <br>ONGOING PROJECTS
+            </div>
+            <div class="w3-quarter text-white underline ">
+                <span class="w3-xxlarge ">2+</span>
+                <br>PROJECTS DONE
+            </div>
+            <div class="w3-quarter text-white underline ">
+                <span class="w3-xxlarge ">1%</span>
+                <br>SATISFIED CLIENTS
+            </div>
+            <div class="w3-quarter text-white underline ">
+                <span class="w3-xxlarge ">0</span>
+                <br>PARTNERS
+            </div>
+        </div>
+    </div>
 
 
 
+    <!-- Modal for full size images on click-->
+    <div id="modal01 " class="w3-modal w3-black " onclick="this.style.display='none' ">
+        <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright " title="Close Modal Image ">×</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64 ">
+            <img id="img01 " class="w3-image ">
+            <p id="caption " class="w3-opacity w3-large "></p>
+        </div>
+    </div>
 
+    <!-- Skills Section -->
+    <div class="w3-container w3-white w3-padding-64 shadow ">
+        <div class="w3-row-padding ">
+            <div class="w3-col m6 ">
+                <h3>My Skills Acquired</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br> tempor incididunt ut labore et dolore.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br> tempor incididunt ut labore et dolore.</p>
+            </div>
+            <div class="w3-col m6 ">
+                <p class="w3-wide "><i class="fa fa-desktop w3-margin-right "></i>Web Design</p>
+                <div class="w3-grey ">
+                    <div class="w3-container w3-dark-grey w3-center " style="width:80% ">80%</div>
+                </div>
+                <p class="w3-wide "><i class="fa fa-cog w3-margin-right "></i>Software Development</p>
+                <div class="w3-grey ">
+                    <div class="w3-container w3-dark-grey w3-center " style="width:50% ">50%</div>
+                </div>
+                <p class="w3-wide "><i class="fa fa-brush w3-margin-right "></i>Animation</p>
+                <div class="w3-grey ">
+                    <div class="w3-container w3-dark-grey w3-center " style="width:30% ">30%</div>
+                </div>
+                <p class="w3-wide "><i class="fa fa-photo w3-margin-right "></i>Photoshop</p>
+                <div class="w3-grey ">
+                    <div class="w3-container w3-dark-grey w3-center " style="width:85% ">45%</div>
+                </div>
+                <p class="w3-wide "><i class="fa fa-guitar w3-margin-right "></i>Music</p>
+                <div class="w3-grey ">
+                    <div class="w3-container w3-dark-grey w3-center " style="width:35% ">35%</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script>
-    window.onscroll = function () { myFunction() };
+    <!-- Carousel Section -->
+    <div class="container-fluid w3-center w3-display-container w3-dark-gray " style="padding:70px 16px " id="pricing ">
+        <h3 class="w3-center text-white ">NEW UPDATES</h3>
+        <div class="w3-display-container mySlides ">
+            <img class="slide-img w3-animate-opacity " src="src/img/IMG20200119071502.jpg ">
+            <div class="w3-display-middle w3-large w3-container w3-padding-16 animate-bottom ">
+                <h3>THE QUICK LITTLE BROWN FOX JUMPS OVER THE LAZY DOG</h3>
+            </div>
+        </div>
+        <div class="w3-display-container mySlides ">
+            <img class="slide-img w3-animate-opacity " src="src/img/IMG20200119073045.jpg ">
+            <div class="w3-display-middle w3-large w3-container w3-padding-16 animate-bottom ">
+                <h3>THE QUICK LITTLE BROWN FOX JUMPS OVER THE LAZY DOG</h3>
+            </div>
+        </div>
+        <div class="w3-display-container mySlides ">
+            <img class="slide-img w3-animate-opacity " src="src/img/Copy of IMG_0343.JPG ">
+            <div class="w3-display-middle w3-large w3-container w3-padding-16 animate-bottom ">
+                <h3>THE QUICK LITTLE BROWN FOX JUMPS OVER THE LAZY DOG</h3>
+            </div>
+        </div>
+        <div class="w3-display-container mySlides ">
+            <img class="slide-img w3-animate-opacity " src="src/img/header-bg.jpeg ">
+            <div class="w3-display-middle w3-large w3-container w3-padding-16 animate-bottom ">
+                <h3>THE QUICK LITTLE BROWN FOX JUMPS OVER THE LAZY DOG</h3>
+            </div>
+        </div>
+        <button class="w3-button w3-black w3-display-left " onclick="plusDivs(-1) ">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right " onclick="plusDivs(+1) ">&#10095;</button>
+        <button class="w3-button demo " onclick="currentDiv(1) ">1</button>
+        <button class="w3-button demo " onclick="currentDiv(2) ">2</button>
+        <button class="w3-button demo " onclick="currentDiv(3) ">3</button>
+        <button class="w3-button demo " onclick="currentDiv(4) ">4</button>
+    </div>
 
-    function myFunction() {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("myBar").style.width = scrolled + "%";
-    }
+    <!-- Contact Section -->
+    <div class="w3-container w3-light-grey " style="padding:128px 16px " id="contact">
+        <h3 class="w3-center ">CONTACT</h3>
+        <p class="w3-center w3-large ">Lets get in touch. Send me a message:</p>
+        <div class="d-inline " style="margin-top:48px ">
+            <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right "></i>Nasipit Talamban, Cebu City ,Philippines</p>
+            <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right "></i> Phone: 09300898505</p>
+            <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right "> </i> Email: johnpaulvistal@gmail.com</p>
+            <br>
+        </div>
+    </div>
 
-
-    function notavailable() {
-      alert("This is not available at this time! \n We will let you know if it's already available.")
-    }
-  </script>
-
-
+    <!-- Footer -->
+    <button id="scroll-top" class="btn btn-primary px-4"><i class="fa fa-angle-up "></i></button>
+    <footer class="w3-center w3-black">
+        <div class="row ">
+            <div class="col-md mt-2 mb-2 ">
+                <!--Column1-->
+                <div class="footer-pad ">
+                    <img style="width:150px " class="rounded rounded-circle " src="src/img/logo.png " alt=" ">
+                </div>
+            </div>
+            <div class="col-md ">
+                <!--Column1-->
+                <div class="footer-pad ">
+                    <h4>Site Map</h4>
+                    <ul class="list-unstyled ">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#activity">Activity</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md ">
+                <div class="w3-xlarge mt-3 mb-2 ">
+                    <h4 class=" ">Follow Me</h4>
+                    <ul class="social-network social-circle ">
+                        <li><a href="# " class="icoFacebook " title="Facebook "><i class="fab fa-facebook "></i></a></li>
+                        <li><a href="# " class="icoLinkedin " title="Linkedin "><i class="fab fa-linkedin "></i></a></li>
+                        <li><a href="# " class="icoLinkedin " title="Github "><i class="fab fa-google "></i></a></li>
+                        <li><a href="# " class="icoLinkedin " title="Github "><i class="fas fa-phone "></i></a></li>
+                        <li><a href="# " class="icoLinkedin " title="Github "><i class="fab fa-github "></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 copy ">
+                <p class="text-center ">&copy; Copyright 2020 - John Paul Vistal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
+
+<script>
+    AOS.init();
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides ");
+        var dots = document.getElementsByClassName("demo ");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none ";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-red ", " ");
+        }
+        x[slideIndex - 1].style.display = "block ";
+        dots[slideIndex - 1].className += " w3-red ";
+    }
+
+    function change_form(x) {
+        x.classList.toggle("change ");
+    }
+
+    $('.nav-item').click(function() {
+        $('#navbarNav').removeClass('show')
+        $('#menu-collapsed').removeClass('change')
+    })
+    $('.navbar-brand').click(function() {
+        $('#navbarNav').removeClass('show')
+        $('#menu-collapsed').removeClass('change')
+    })
+
+    // Add scrollspy to <body>
+    $('body').scrollspy({
+        target: ".navbar ",
+        offset: 50.
+    });
+</script>
 
 </html>
