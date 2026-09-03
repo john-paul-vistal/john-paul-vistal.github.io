@@ -48,9 +48,10 @@ export default function ResumeModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl overflow-y-auto relative flex flex-col">
-        {/* Modal Header Bar */}
-        <div className="sticky top-0 bg-slate-900 text-white px-6 py-4 flex justify-between items-center z-10">
+      <div className="bg-white w-full max-w-4xl h-[90vh] rounded-2xl shadow-2xl relative flex flex-col overflow-hidden">
+        
+        {/* Fixed Header Bar */}
+        <div className="flex-shrink-0 bg-slate-900 text-white px-6 py-4 flex justify-between items-center z-10">
           <h3 className="font-bold tracking-wide text-lg">
             John Paul Vistal - Professional CV
           </h3>
@@ -64,12 +65,13 @@ export default function ResumeModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Modal CV Body Content */}
-        <div className="px-6 pb-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-8 bg-slate-50 text-left items-start">
-          {/* Sidebar / Left Column */}
-          <div className="md:col-span-4 space-y-6 bg-teal-50/50 p-6 rounded-xl border border-teal-100/60 flex flex-col items-center md:items-start text-center md:text-left">
+        {/* Scrollable Body Content (Thin scrollbar applied here) */}
+        <div className="flex-1 overflow-y-auto px-6 py-6 sm:p-10 grid grid-cols-1 md:grid-cols-12 gap-4 bg-slate-50 text-left items-start [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+          
+          {/* Sidebar / Left Column (Centered content) */}
+          <div className="md:col-span-5 space-y-6 bg-blue-50/50 p-6 rounded-xl border border-blue-100/60 flex flex-col items-center text-center">
             {/* Profile Picture (210px x 210px) */}
-            <div className="w-[210px] h-[210px] min-w-[210px] min-h-[210px] rounded-2xl overflow-hidden border-2 border-teal-600/30 shadow-md bg-white mx-auto md:mx-0">
+            <div className="w-[210px] h-[210px] min-w-[210px] min-h-[210px] rounded-2xl overflow-hidden border-2 border-blue-600/30 shadow-md bg-white mx-auto">
               <img
                 src={profilePic}
                 alt="John Paul Vistal"
@@ -77,31 +79,31 @@ export default function ResumeModal({ isOpen, onClose }) {
               />
             </div>
 
-            <div className="w-full">
+            <div className="w-full text-center">
               {/* Name forced onto a single line */}
               <h2 className="text-xl lg:text-2xl font-black text-slate-900 tracking-tight whitespace-nowrap">
                 JOHN PAUL VISTAL
               </h2>
-              <p className="text-xs font-bold text-teal-700 tracking-widest uppercase mt-1">
+              <p className="text-xs font-bold text-blue-600 tracking-widest uppercase mt-1">
                 Software Engineer
               </p>
             </div>
 
-            <div className="space-y-2 text-xs text-slate-600 w-full">
-              <p>+1 (555) 234-5678</p>
-              <p>steve.milner@example.com</p>
-              <p>San Francisco, CA</p>
+            <div className="space-y-2 text-xs text-slate-600 w-full text-center">
+              <p>+639 95754 6102</p>
+              <p>johnpaulvistal@gmail.com</p>
+              <p>Sagbayan, Bohol, Philippines</p>
             </div>
 
-            <div className="border-t border-teal-200/60 pt-4 w-full">
-              <h4 className="font-bold text-xs uppercase text-slate-900 tracking-wider mb-3 text-left">
+            <div className="border-t border-blue-200/60 pt-4 w-full">
+              <h4 className="font-bold text-xs uppercase text-slate-900 tracking-wider mb-3 text-center">
                 Core Skills
               </h4>
-              <div className="flex flex-wrap gap-1.5 justify-start">
+              <div className="flex flex-wrap gap-1.5 justify-center">
                 {skillsList.map((skill, index) => (
                   <span
                     key={index}
-                    className="text-[10px] bg-white border border-teal-200 text-slate-700 px-2.5 py-1 rounded-md font-medium"
+                    className="text-[10px] bg-white border border-blue-200 text-slate-700 px-2.5 py-1 rounded-md font-medium"
                   >
                     {skill}
                   </span>
@@ -109,21 +111,22 @@ export default function ResumeModal({ isOpen, onClose }) {
               </div>
             </div>
 
-            <div className="border-t border-teal-200/60 pt-4 w-full">
-              <h4 className="font-bold text-xs uppercase text-slate-900 tracking-wider mb-3 text-left">
+            <div className="border-t border-blue-200/60 pt-4 w-full">
+              <h4 className="font-bold text-xs uppercase text-slate-900 tracking-wider mb-3 text-center">
                 Languages
               </h4>
-              <ul className="space-y-1.5 text-xs text-slate-700 list-disc list-inside text-left">
-                <li>English (Native)</li>
-                <li>Spanish (Fluent)</li>
+              <ul className="space-y-1.5 text-xs text-slate-700 list-none text-center">
+                <li>English (Conversational)</li>
+                <li>Filipino (Fluent)</li>
+                <li>Cebuano (Native)</li>
               </ul>
             </div>
           </div>
 
           {/* Main Content / Right Column */}
-          <div className="md:col-span-8 space-y-6 bg-white p-6 sm:p-8 rounded-xl border border-slate-200">
+          <div className="md:col-span-7 space-y-6 bg-white p-6 sm:p-8 rounded-xl border border-slate-200">
             <div>
-              <h4 className="font-bold text-xs uppercase text-teal-700 tracking-wider mb-2">
+              <h4 className="font-bold text-xs uppercase text-blue-600 tracking-wider mb-2">
                 Professional Profile
               </h4>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -137,7 +140,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             </div>
 
             <div className="border-t border-slate-100 pt-4">
-              <h4 className="font-bold text-xs uppercase text-teal-700 tracking-wider mb-3">
+              <h4 className="font-bold text-xs uppercase text-blue-600 tracking-wider mb-3">
                 Education
               </h4>
               <div className="space-y-3 text-sm">
@@ -156,7 +159,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             </div>
 
             <div className="border-t border-slate-100 pt-4">
-              <h4 className="font-bold text-xs uppercase text-teal-700 tracking-wider mb-3">
+              <h4 className="font-bold text-xs uppercase text-blue-600 tracking-wider mb-3">
                 Work Experience
               </h4>
               <div className="space-y-5 text-sm">
@@ -164,7 +167,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <div key={index} className="border-b border-slate-100 pb-4 last:border-b-0 last:pb-0">
                     <div className="flex justify-between font-bold text-slate-900 text-xs sm:text-sm">
                       <span>{exp.role}</span>
-                      <span className="text-teal-700 font-normal">
+                      <span className="text-blue-600 font-normal">
                         {exp.period}
                       </span>
                     </div>
@@ -181,8 +184,8 @@ export default function ResumeModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Modal Footer */}
-        <div className="bg-slate-100 px-6 py-4 border-t border-slate-200 flex justify-end gap-3">
+        {/* Fixed Footer Bar */}
+        <div className="flex-shrink-0 bg-slate-100 px-6 py-4 border-t border-slate-200 flex justify-end gap-3 z-10">
           <button
             onClick={onClose}
             className="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold px-5 py-2.5 rounded transition cursor-pointer"
@@ -194,11 +197,12 @@ export default function ResumeModal({ isOpen, onClose }) {
               alert("CV downloaded successfully!");
               onClose();
             }}
-            className="bg-teal-700 hover:bg-teal-800 text-white text-xs font-semibold px-6 py-2.5 rounded transition shadow-sm cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-6 py-2.5 rounded transition shadow-sm cursor-pointer"
           >
             Download PDF
           </button>
         </div>
+
       </div>
     </div>
   );

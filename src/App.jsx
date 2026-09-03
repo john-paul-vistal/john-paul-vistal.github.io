@@ -1,5 +1,6 @@
 import { useState } from "react";
 import profilePic from "./assets/profesional-picture.png";
+import logo from "./assets/jpv-logo2.png";
 import ResumeModal from "./custom-components/ResumeModal";
 
 const services = [
@@ -113,28 +114,32 @@ export default function App() {
   const [cvModalOpen, setCvModalOpen] = useState(false);
 
   return (
-    <div className="bg-white text-slate-800 min-h-screen w-full selection:bg-teal-700 selection:text-white overflow-x-hidden font-sans relative">
+    <div className="bg-white text-slate-800 min-h-screen w-full selection:bg-blue-600 selection:text-white overflow-x-hidden font-sans relative">
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 px-6 sm:px-12 lg:px-20 py-4 flex justify-between items-center z-50 shadow-sm">
-        <span className="font-extrabold tracking-wider text-xl text-slate-900">
-          J<span className="text-teal-700">P</span>V
-        </span>
+        <div className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="Profile Picture"
+            className="w-10 h-10 rounded-full"
+          />
+        </div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
-          <a href="#home" className="hover:text-teal-700 transition">
+          <a href="#home" className="hover:text-blue-600 transition">
             Home
           </a>
-          <a href="#services" className="hover:text-teal-700 transition">
+          <a href="#services" className="hover:text-blue-600 transition">
             Services
           </a>
-          <a href="#experience" className="hover:text-teal-700 transition">
+          <a href="#experience" className="hover:text-blue-600 transition">
             Experience
           </a>
-          <a href="#skills" className="hover:text-teal-700 transition">
+          <a href="#skills" className="hover:text-blue-600 transition">
             Skill
           </a>
-          <a href="#portfolio" className="hover:text-teal-700 transition">
+          <a href="#portfolio" className="hover:text-blue-600 transition">
             Portfolio
           </a>
         </div>
@@ -143,7 +148,7 @@ export default function App() {
         <div className="hidden md:block">
           <a
             href="#contact"
-            className="bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs tracking-wider px-6 py-2.5 rounded transition shadow-sm"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs tracking-wider px-6 py-2.5 rounded transition shadow-sm"
           >
             LET'S TALK
           </a>
@@ -152,7 +157,7 @@ export default function App() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-slate-700 hover:text-teal-700 focus:outline-none p-2"
+          className="md:hidden text-slate-700 hover:text-blue-600 focus:outline-none p-2"
           aria-label="Toggle Menu"
         >
           <svg
@@ -186,42 +191,42 @@ export default function App() {
           <a
             href="#home"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-slate-700 hover:text-teal-700 font-medium"
+            className="text-slate-700 hover:text-blue-600 font-medium"
           >
             Home
           </a>
           <a
             href="#services"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-slate-700 hover:text-teal-700 font-medium"
+            className="text-slate-700 hover:text-blue-600 font-medium"
           >
             Services
           </a>
           <a
             href="#experience"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-slate-700 hover:text-teal-700 font-medium"
+            className="text-slate-700 hover:text-blue-600 font-medium"
           >
             Experience
           </a>
           <a
             href="#skills"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-slate-700 hover:text-teal-700 font-medium"
+            className="text-slate-700 hover:text-blue-600 font-medium"
           >
             Skill
           </a>
           <a
             href="#portfolio"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-slate-700 hover:text-teal-700 font-medium"
+            className="text-slate-700 hover:text-blue-600 font-medium"
           >
             Portfolio
           </a>
           <a
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="bg-teal-700 text-white text-center py-2.5 rounded font-medium text-sm tracking-wider"
+            className="bg-blue-600 text-white text-center py-2.5 rounded font-medium text-sm tracking-wider"
           >
             LET'S TALK
           </a>
@@ -231,15 +236,15 @@ export default function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="pt-32 pb-16 lg:pt-20 lg:pb-0 px-6 sm:px-12 lg:px-20 w-full relative overflow-hidden bg-gradient-to-r from-[#e4f2f2] via-[#ebf6f6] to-[#d8eeed] min-h-[90vh] flex items-center justify-center"
+        className="pt-32 pb-16 lg:pt-20 lg:pb-0 px-6 sm:px-12 lg:px-20 w-full relative overflow-hidden bg-gradient-to-r from-[#e6f0fa] via-[#edf4fc] to-[#deebf8] min-h-[90vh] flex items-center justify-center"
       >
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center justify-between">
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left z-10 py-12">
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-                Hello, I'm <span className="text-[#135d54]">John Paul</span>
+                Hello, I'm <span className="text-[#1d4ed8]">John Paul</span>
               </h1>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#135d54] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1d4ed8] tracking-tight">
                 Software Engineer
               </h2>
             </div>
@@ -257,13 +262,13 @@ export default function App() {
             <div className="pt-2 flex flex-wrap gap-4 justify-center lg:justify-start">
               <button
                 onClick={() => setCvModalOpen(true)}
-                className="border border-[#135d54] hover:bg-[#135d54]/10 text-[#135d54] font-medium px-8 py-3.5 rounded transition text-xs tracking-wider bg-white/80 shadow-sm cursor-pointer"
+                className="border border-[#1d4ed8] hover:bg-[#1d4ed8]/10 text-[#1d4ed8] font-medium px-8 py-3.5 rounded transition text-xs tracking-wider bg-white/80 shadow-sm cursor-pointer"
               >
                 LEARN MORE
               </button>
               <a
                 href="#contact"
-                className="bg-[#135d54] hover:bg-[#0f4a42] text-white font-medium px-8 py-3.5 rounded transition shadow-sm text-xs tracking-wider"
+                className="bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-medium px-8 py-3.5 rounded transition shadow-sm text-xs tracking-wider"
               >
                 CONTACT ME
               </a>
@@ -271,8 +276,8 @@ export default function App() {
           </div>
 
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative items-center">
-            <div className="relative w-full max-w-[420px] bg-white rounded-3xl p-7 shadow-2xl border border-teal-100 z-10">
-              <div className="relative w-full h-[420px] sm:h-[480px] bg-gradient-to-b from-teal-50/40 to-slate-100 rounded-2xl overflow-hidden flex items-end justify-center border border-slate-100 shadow-inner">
+            <div className="relative w-full max-w-[420px] bg-white rounded-3xl p-7 shadow-2xl border border-blue-100 z-10">
+              <div className="relative w-full h-[420px] sm:h-[480px] bg-gradient-to-b from-blue-50/40 to-slate-100 rounded-2xl overflow-hidden flex items-end justify-center border border-slate-100 shadow-inner">
                 <img
                   src={profilePic}
                   alt="John Paul Vistal"
@@ -292,7 +297,7 @@ export default function App() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-teal-700 text-xs font-bold tracking-widest uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
+            <span className="text-blue-600 text-xs font-bold tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
               What I Do
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900">
@@ -305,7 +310,7 @@ export default function App() {
                 key={index}
                 className="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-md transition"
               >
-                <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center text-teal-700 font-bold mb-6 text-xl">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold mb-6 text-xl">
                   0{index + 1}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
@@ -327,7 +332,7 @@ export default function App() {
       >
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-teal-700 text-xs font-bold tracking-widest uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
+            <span className="text-blue-600 text-xs font-bold tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
               Career History
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900">
@@ -341,7 +346,7 @@ export default function App() {
                 className="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
               >
                 <div>
-                  <span className="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100">
+                  <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded border border-blue-100">
                     {exp.period}
                   </span>
                   <h3 className="text-xl font-bold text-slate-900 mt-2">
@@ -364,23 +369,21 @@ export default function App() {
         className="py-24 px-6 sm:px-12 lg:px-20 w-full bg-slate-50 border-t border-slate-100"
       >
         <div className="max-w-6xl mx-auto text-center">
-          <span className="text-teal-700 text-xs font-bold tracking-widest uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
+          <span className="text-blue-600 text-xs font-bold tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
             Core Competencies
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 mb-12 text-slate-900">
             Technical Skills
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
-            {skills.link
-              ? null
-              : skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="bg-white border border-slate-200 text-slate-700 px-5 py-3 rounded-xl font-medium text-sm shadow-sm hover:border-teal-700 hover:text-teal-700 transition"
-                  >
-                    {skill}
-                  </span>
-                ))}
+            {skills.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-white border border-slate-200 text-slate-700 px-5 py-3 rounded-xl font-medium text-sm shadow-sm hover:border-blue-600 hover:text-blue-600 transition"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -392,7 +395,7 @@ export default function App() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-teal-700 text-xs font-bold tracking-widest uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
+            <span className="text-blue-600 text-xs font-bold tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
               Recent Projects
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900">
@@ -406,10 +409,10 @@ export default function App() {
                 className="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl hover:shadow-lg transition duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <span className="text-xs font-semibold text-teal-700 uppercase">
+                  <span className="text-xs font-semibold text-blue-600 uppercase">
                     {project.category}
                   </span>
-                  <h3 className="text-2xl font-bold mt-2 mb-3 text-slate-900 group-hover:text-teal-700 transition">
+                  <h3 className="text-2xl font-bold mt-2 mb-3 text-slate-900 group-hover:text-blue-600 transition">
                     {project.title}
                   </h3>
                   <p className="text-slate-600 text-sm mb-6 leading-relaxed">
@@ -439,7 +442,7 @@ export default function App() {
       >
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-3">
-            <span className="text-teal-400 text-xs font-bold tracking-widest uppercase bg-teal-900/40 px-3 py-1 rounded-full border border-teal-500/30">
+            <span className="text-blue-400 text-xs font-bold tracking-widest uppercase bg-blue-950 px-3 py-1 rounded-full border border-blue-500/30">
               Get in Touch
             </span>
             <h3 className="text-3xl font-bold">
@@ -453,40 +456,40 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 text-left">
             <div className="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl">
-              <span className="text-xs text-teal-400 uppercase font-semibold">
+              <span className="text-xs text-blue-400 uppercase font-semibold">
                 Email Address
               </span>
               <p className="text-slate-200 font-medium mt-1 text-sm truncate">
-                steve.milner@example.com
+                johnpaulvistal@gmail.com
               </p>
             </div>
             <div className="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl">
-              <span className="text-xs text-teal-400 uppercase font-semibold">
+              <span className="text-xs text-blue-400 uppercase font-semibold">
                 Phone Number
               </span>
               <p className="text-slate-200 font-medium mt-1 text-sm">
-                +1 (555) 234-5678
+                +639 95754 6102
               </p>
             </div>
             <div className="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl">
-              <span className="text-xs text-teal-400 uppercase font-semibold">
+              <span className="text-xs text-blue-400 uppercase font-semibold">
                 Professional Profile
               </span>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/john-paul-vistal-2b73701a4/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-teal-400 hover:underline font-medium mt-1 text-sm block"
+                className="text-blue-400 hover:underline font-medium mt-1 text-sm block"
               >
-                linkedin.com/in/steve-milner
+                linkedin.com/in/john-paul-vistal
               </a>
             </div>
           </div>
 
           <div className="pt-6">
             <a
-              href="mailto:steve.milner@example.com"
-              className="inline-block bg-teal-600 hover:bg-teal-500 text-white font-medium px-8 py-4 rounded-md transition shadow-sm text-sm tracking-wider"
+              href="mailto: johnpaulvistal@gmail.com"
+              className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-medium px-8 py-4 rounded-md transition shadow-sm text-sm tracking-wider"
             >
               SEND DIRECT MESSAGE
             </a>
