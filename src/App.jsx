@@ -2,6 +2,7 @@ import { useState } from "react";
 import profilePic from "./assets/profesional-picture.png";
 import logo from "./assets/jpv-logo2.png";
 import ResumeModal from "./custom-components/ResumeModal";
+import ProjectModal from "./custom-components/ProjectModal";
 
 const services = [
   {
@@ -66,6 +67,7 @@ const skills = [
 
 const projects = [
   {
+    id: "sams",
     title: "School Attendance Monitoring System",
     category: "Desktop / Enterprise App",
     description:
@@ -73,6 +75,7 @@ const projects = [
     tech: ["Java", "SQL"],
   },
   {
+    id: "lcs",
     title: "Live Chat System",
     category: "Real-Time Communication",
     description:
@@ -80,6 +83,7 @@ const projects = [
     tech: ["JavaScript", "MQTT", "Bootstrap"],
   },
   {
+    id: "pong",
     title: "Simple Ping Pong Game",
     category: "Game Development",
     description:
@@ -87,6 +91,7 @@ const projects = [
     tech: ["JavaScript", "Phaser", "Bootstrap"],
   },
   {
+    id: "wms",
     title: "Water Distribution Management System",
     category: "Full Stack Web App",
     description:
@@ -94,6 +99,7 @@ const projects = [
     tech: ["Angular", "PHP Laravel", "MySQL", "Bootstrap"],
   },
   {
+    id: "pms",
     title: "Project Management System",
     category: "Productivity Tool",
     description:
@@ -101,6 +107,7 @@ const projects = [
     tech: ["Angular", "PHP Laravel", "MySQL", "Bootstrap"],
   },
   {
+    id: "pbm",
     title: "Printing Business Manager",
     category: "Full Stack Web App",
     description:
@@ -112,6 +119,7 @@ const projects = [
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [cvModalOpen, setCvModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <div className="bg-white text-slate-800 min-h-screen w-full selection:bg-blue-600 selection:text-white overflow-x-hidden font-sans relative">
@@ -401,12 +409,17 @@ export default function App() {
             <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900">
               Featured Portfolio
             </h2>
+            <p className="text-slate-500 text-sm mt-2">
+              Click any card to view detailed screenshots and specifications.
+            </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl hover:shadow-lg transition duration-300 flex flex-col justify-between group"
+                onClick={() => setSelectedProject(project)} // <-- Triggers opening the project modal
+                className="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl hover:shadow-lg hover:border-blue-300 transition duration-300 flex flex-col justify-between group cursor-pointer"
               >
                 <div>
                   <span className="text-xs font-semibold text-blue-600 uppercase">
@@ -419,15 +432,20 @@ export default function App() {
                     {project.description}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t, i) => (
-                    <span
-                      key={i}
-                      className="text-xs bg-white text-slate-700 px-3 py-1 rounded-md border border-slate-200"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((t, i) => (
+                      <span
+                        key={i}
+                        className="text-xs bg-white text-slate-700 px-3 py-1 rounded-md border border-slate-200"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-xs font-bold text-blue-600 group-hover:underline flex items-center gap-1">
+                    View Screenshots &rarr;
+                  </span>
                 </div>
               </div>
             ))}
@@ -499,6 +517,13 @@ export default function App() {
 
       {/* --- RENDER THE SEPARATED CV MODAL COMPONENT --- */}
       <ResumeModal isOpen={cvModalOpen} onClose={() => setCvModalOpen(false)} />
+
+      {/* --- RENDER THE SEPARATED PROJECT MODAL COMPONENT --- */}
+      <ProjectModal
+        isOpen={Boolean(selectedProject)}
+        onClose={() => setSelectedProject(null)}
+        project={selectedProject}
+      />
     </div>
   );
 }
