@@ -7,4 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: 'https://github.com/john-paul-vistal/john-paul-vistal.github.io.git'
 })
