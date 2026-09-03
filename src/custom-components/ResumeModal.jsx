@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import html2canvas from "html2canvas-pro";
 import jsPDF from "jspdf";
 import profilePic from "../assets/profesional-picture.png";
@@ -7,6 +7,18 @@ export default function ResumeModal({ isOpen, onClose }) {
   const [isDownloadingPDF, setIsDownloadingPDF] = useState(false);
   const [isDownloadingImage, setIsDownloadingImage] = useState(false);
   const resumeRef = useRef(null);
+
+  // Lock background body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -55,14 +67,19 @@ export default function ResumeModal({ isOpen, onClose }) {
 
   const certificationsList = [
     {
-      title: "Meta Front-End Developer Professional Certificate",
-      issuer: "Coursera / Meta",
-      year: "2024",
+      title: "React Basics",
+      issuer: "COURSERA / Meta",
+      year: "2026",
     },
     {
-      title: "Advanced React & TypeScript",
-      issuer: "Coursera",
-      year: "2023",
+      title: "Angular The Complete Guide (2023 Edition)",
+      issuer: "UDEMY / Maximilian Schwarzmüller",
+      year: "2022",
+    },
+    {
+      title: "Cypress Web Automation Testing",
+      issuer: "UDEMY / Artem bondar",
+      year: "2022",
     },
   ];
 

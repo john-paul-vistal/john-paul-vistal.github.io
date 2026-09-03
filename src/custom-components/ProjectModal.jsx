@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ProjectModal({ isOpen, onClose, project }) {
   const [zoomedImage, setZoomedImage] = useState(null);
+
+  // Lock background body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   if (!isOpen || !project) return null;
 
@@ -115,24 +127,27 @@ export default function ProjectModal({ isOpen, onClose, project }) {
       {zoomedImage && (
         <div
           onClick={() => setZoomedImage(null)}
-          className="fixed inset-0 z-60 flex items-center justify-center p-2 sm:p-6  backdrop-blur-md cursor-pointer animate-fadeIn"
+          className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md cursor-pointer animate-fadeIn"
         >
           <div
-            className="relative max-w-[79vw] w-full bg-slate-900 border border-slate-700 rounded-2xl p-3 sm:p-6 flex flex-col items-center shadow-2xl"
+            className="relative max-w-[95vw] sm:max-w-5xl lg:max-w-7xl w-full bg-slate-900 border border-slate-700 rounded-2xl p-2 sm:p-3 flex flex-col items-center shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setZoomedImage(null)}
-              className="absolute top-0 right-5 text-slate-400 hover:text-white text-3xl font-bold cursor-pointer z-10"
-            >
-              &times;
-            </button>
+            <div className="w-full flex justify-between mb-2">
+              <h2 className="text-white">Preview</h2>
+              <button
+                onClick={() => setZoomedImage(null)}
+                className="text-slate-400 hover:text-white text-2xl font-bold cursor-pointer px-2 py-0.5 leading-none"
+              >
+                &times;
+              </button>
+            </div>
 
-            <div className="w-full h-[78vh] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 my-4">
+            <div className="w-full max-h-[82vh] bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 p-2">
               <img
                 src={zoomedImage}
                 alt="Enlarged Project Preview"
-                className="w-full h-full object-contain"
+                className="max-w-full max-h-[78vh] w-auto h-auto object-contain rounded-lg"
               />
             </div>
           </div>

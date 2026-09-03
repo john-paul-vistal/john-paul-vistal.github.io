@@ -246,10 +246,11 @@ export default function App() {
         id="home"
         className="pt-32 pb-16 lg:pt-20 lg:pb-0 px-6 sm:px-12 lg:px-20 w-full relative overflow-hidden bg-gradient-to-r from-[#e6f0fa] via-[#edf4fc] to-[#deebf8] min-h-[90vh] flex items-center justify-center"
       >
-        <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center justify-between">
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left z-10 py-12">
+        <div className="max-w-7xl w-full flex flex-col-reverse lg:grid lg:grid-cols-12 gap-8 lg:gap-8 items-center justify-between">
+          {/* Text Content */}
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left z-10 py-6 lg:py-12">
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
                 Hello, I'm <span className="text-[#1d4ed8]">John Paul</span>
               </h1>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1d4ed8] tracking-tight">
@@ -257,7 +258,7 @@ export default function App() {
               </h2>
             </div>
 
-            <p className="text-slate-600 text-base sm:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p className="text-slate-600 text-sm sm:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed font-normal">
               I worked as a Software Engineer since 2021 with over{" "}
               {new Date().getFullYear() - 2021}
               years of experience. I have full-stack capabilities, but my core
@@ -283,9 +284,10 @@ export default function App() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 flex justify-center lg:justify-end relative items-center">
-            <div className="relative w-full max-w-[420px] bg-white rounded-3xl p-7 shadow-2xl border border-blue-100 z-10">
-              <div className="relative w-full h-[420px] sm:h-[480px] bg-gradient-to-b from-blue-50/40 to-slate-100 rounded-2xl overflow-hidden flex items-end justify-center border border-slate-100 shadow-inner">
+          {/* Profile Picture Box (Smaller on mobile/tablet) */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end relative items-center w-full">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[420px] bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-xl lg:shadow-2xl border border-blue-100 z-10">
+              <div className="relative w-full h-[280px] sm:h-[320px] lg:h-[480px] bg-gradient-to-b from-blue-50/40 to-slate-100 rounded-xl sm:rounded-2xl overflow-hidden flex items-end justify-center border border-slate-100 shadow-inner">
                 <img
                   src={profilePic}
                   alt="John Paul Vistal"
