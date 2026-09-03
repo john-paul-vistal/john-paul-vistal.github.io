@@ -26,19 +26,19 @@ const services = [
 const experience = [
   {
     role: "Software Engineer",
-    company: "Trust Arc Web Services",
+    company: "Trust Arc",
     period: "2025 - Present",
     desc: "Promoted to Software Engineer. Took on ownership of core product features, streamlined system workflows, and collaborated more closely with cross-functional teams.",
   },
   {
     role: "Associate Software Engineer",
-    company: "Trust Arc Web Services",
+    company: "Trust Arc",
     period: "2021 - 2024",
     desc: "Transitioned from internship to a full-time associate role. Focused on building responsive components, debugging complex issues, and delivering robust web solutions.",
   },
   {
     role: "Software Engineering Intern",
-    company: "Trust Arc Web Services",
+    company: "Trust Arc",
     period: "2021",
     desc: "Gained hands-on experience in modern development workflows, assisted in writing clean code, and supported the team with day-to-day feature implementations.",
   },
